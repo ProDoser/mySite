@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><!-- production-->
+    <!--link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/   dev-->
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+   <!-- <script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>  For test of future jQuery features and-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <!--script type="text/javascript" src="scripts/angular.js"></script for dev-->
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <title>Leonid Zadorozhnykh.</title>
+</head>
+<body ng-app="leoApp">
+
+
+<div class="container">
+    <div class="jumbotron">
+       <h1>Leonid Zadorozhnykh</h1>
+       <p>Personal web site</p>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Menu -->
+<section ng-controller="TabController as tab" class="tab">
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li ng-class = "{active:tab.isSet(1)}"><a href ng-click = "tab.setTab(1)">Home</a></li>
+            <li ng-class = "{active:tab.isSet(2)}"><a href ng-click = "tab.setTab(2)">Projects</a></li>
+            <li ng-class = "{active:tab.isSet(3)}"><a href ng-click = "tab.setTab(3)">Contacts</a></li>
+            <li ng-class = "{active:tab.isSet(4)}"><a href ng-click = "tab.setTab(4)">About</a></li>
+        </ul>
+    </div>
+
+<!--End of menu -->
+
+<div class="tab-content" id="bottom">
+
+    <!--Home page content-->
+    <div ng-show = "tab.isSet(1)">
+        <div ng-include="'home.html'"></div>
+    </div>
+
+    <!--Projects page content-->
+    <div ng-show = "tab.isSet(2)">
+        <div ng-include="'projects.html'"></div>
+    </div>
+
+    <!--Contacts page content-->
+    <div ng-show = "tab.isSet(3)">
+            <div ng-include="'contacts.html'"></div>
+    </div>
+
+    <!--About page content-->
+    <div ng-show = "tab.isSet(4)">
+         <div ng-include="'about.html'"></div>
+    </div>
+
+    <!--Tic-Tac-Toe game section-->
+    <div ng-show = "tab.isSet(5)">
+            <div ng-include="'tic-tac.html'"></div>
+    </div>
+    <!--Tic-Tac-Toe game section-->
+    <div ng-show = "tab.isSet(6)">
+        <div ng-include="'fitnes-calc.html'"></div>
+    </div>
+
+</div>
+</section>
+
+<div id="footer">
+    &copy Leonid Zadorozhnykh 2016
+</div>
+<script src="scripts/tic_tac_game.js"></script>
+</body>
+</html>

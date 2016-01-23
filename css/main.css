@@ -1,0 +1,168 @@
+.jumbotron {
+    background-image:url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vw;
+    min-height: 220px;
+}
+.jumbotron h1 {
+    color: #fff;
+}
+
+.jumbotron p {
+    color: #fff;
+}
+#photo{
+    width: 20%;
+    max-width: 150px;
+    min-width: 85px;
+    float: left;
+    margin-right: 10px;
+}
+
+#git-logo {
+    width: 20%;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.nav{
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+#bottom{
+    margin-bottom: 70px;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: #5e5e5e;
+    color: #fff;
+    width: 100%;
+    text-align:center;
+    font-size:0.8em;
+    border-radius: 15px 15px 0 0;
+}
+
+.imgdiv{
+    /*float: left;*/
+    width: 20vw;
+    height: 20vw;
+}
+.myimg {
+    width: 80%;
+    margin:10%;
+
+}
+
+.myimg:hover, .myimg:active {
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+/*------------------*/
+/*Tic-Tac-Toe styles*/
+.tic-actions {
+    text-align: center;
+}
+
+.tic-container {
+    width: 100%;
+    margin: auto;
+
+}
+
+.tic-description{
+    text-align: center;
+}
+
+.tic-field {
+    margin: 50px auto;
+    width: 400px;
+    height: 400px;
+}
+
+.cell {
+    background-color: white;
+    border: 3px solid #EA0A0A;
+    float: left;
+    width:33.33%;
+    height: 33.33%;
+}
+.cell:hover {
+
+    box-shadow:5px 5px 40px 15px #EE1B22 inset;
+}
+.ai {
+    background-image: url('../img/ai.jpg');
+    background-size: 100%;
+}
+.ai:hover{
+    box-shadow: none;
+}
+.player {
+    background-image: url('../img/player.jpg');
+    background-size: 100%;
+}
+.player:hover{
+    box-shadow: none;
+}
+.tic-description h1, .tic-description h3{
+    color: #EA0A0A;
+    text-shadow: 1px 1px 2px black, 0 0 0.2em red;
+}
+.tic-description p{
+    font-weight: bold;
+    color: #EA0A0A;
+    text-shadow: 1px 1px 1px black;
+}
+
+/*For medium devices*/
+/*Tic-Tac-Toe*/
+@media only screen and (max-width: 500px) {
+    .tic-field {
+        margin: 20px auto;
+        width: 70vw;
+        height: 70vw;
+    }
+    .cell {
+        border: 2px solid #EA0A0A;
+    }
+}
+
+
+/*For small devices like phones*/
+@media only screen and (max-width: 350px) {
+    .nav li a{
+        font-size: 0.8em;
+        padding: 8px 12px;
+        font-weight: bold;
+    }
+    .myimg {
+        max-width: 200px;
+    }
+
+    /*Tic-Tac-Toe*/
+    .tic-description{
+        width: 100%;
+    }
+    .tic-content{
+        width: 100%;
+    }
+
+    .cell {
+        border: 1px solid #EA0A0A;
+    }
+    .cell:hover {
+
+        box-shadow:2px 2px 20px 5px #EE1B22 inset;
+    }
+}

@@ -1,0 +1,50 @@
+<div class="container" ng-controller="FitnessController as calc" ng-submit="dataForm.$valid&&calc.calculate(calc.h, calc.w, calc.a)">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <form name="dataForm" novalidate>
+                <fieldset class="form-group">
+                    <label>Height:</label><br>
+                    <input type="number" class="form-control" ng-model="calc.h" placeholder="Enter your height here"
+                           title="Height">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>Weight:</label><br>
+                    <input type="number" class="form-control" ng-model="calc.w" placeholder="Enter your weight here"
+                           title="Weight">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>Age:</label><br>
+                    <input type="number" class="form-control" ng-model="calc.a" placeholder="Enter your age here"
+                           title="Age">
+                </fieldset>
+                <fieldset class="form-group pull-right">
+                    <input type="submit" class="btn btn-primary" value="Calculate" />
+                    <button type="button" class="btn btn-primary" ng-click="calc.clear(calc.h, calc.w, calc.a)">Clear</button>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <div class="col-md-4 col-sm-6 col-xs-12" ng-style="{background: calc.color}"  ng-show="dataForm.$valid&&dataForm.$dirty">
+
+                <p>Your height is: {{calc.h}}</p>
+                <p>Your weight is: {{calc.w}}</p>
+                <p>Your age is: {{calc.a}}</p>
+                <p>Your BMI is: {{calc.bmi |  number:2}}</p>
+                <p>{{calc.result}}</p>
+
+        </div>
+
+
+        <div class="col-md-4 col-sm-6 col-xs-12" id="hr-back" ng-show="calc.result!=null&&dataForm.$dirty">
+
+                <p>Heart rate zones:</p>
+                <p>HRZ1: {{calc.hr1 |  number:0}} - {{calc.hr2 | number:0}}</p>
+                <p>HRZ2: {{calc.hr2 +1 |  number:0}} - {{calc.hr3 |  number:0}}</p>
+                <p>HRZ3: {{calc.hr3 +1 |  number:0}} - {{calc.max}}</p>
+
+
+
+        </div>
+    </div>
+</div>
